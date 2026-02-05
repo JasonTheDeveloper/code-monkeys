@@ -88,7 +88,8 @@
       {
         "assets": [
           "CHANGELOG.md",
-          "README.md"
+          "README.md",
+          "devcontainer-feature/code-monkey/devcontainer-feature.json"
         ],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
