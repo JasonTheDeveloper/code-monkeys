@@ -9,7 +9,7 @@ if [ $# -eq 0 ]; then
 fi
 
 NEW_VERSION="$1"
-target_file="devcontainer-feature/devcontainer-feature.json"
+target_file="devcontainer-feature/code-monkey/devcontainer-feature.json"
 
 # Resolve the file path
 if [ -f "$target_file" ]; then
