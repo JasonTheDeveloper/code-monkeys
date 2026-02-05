@@ -65,5 +65,6 @@ jobs:
         with:
           publish-features: "true"
           base-path-to-features: "./devcontainer-feature"
+          disable-repo-tagging: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
