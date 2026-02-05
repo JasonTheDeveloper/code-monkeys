@@ -1,8 +1,4 @@
 #!/bin/sh
-set -e
+set +e
 
-# Run the copy script
-/usr/local/bin/copy-file-to-workspace
-
-# Execute the command passed to the container
-exec "$@"
+/usr/local/bin/copy-file-to-workspace > /tmp/code-monkey.log 2>&1
