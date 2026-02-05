@@ -1,0 +1,68 @@
+name: "Release dev container features"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  semantic-release:
+    name: Generate next release version
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
+      issues: write
+
+    outputs:
+      new-release-published: ${{ steps.semantic-release.outputs.new-release-published }}
+      new-release-version: ${{ steps.semantic-release.outputs.new-release-version }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+
+    - name: "Install semantic-release"
+      run: |
+        npm install @semantic-release/exec
+        npm install @semantic-release/github
+        npm install @semantic-release/changelog
+        npm install @semantic-release/git
+        npm install conventional-changelog-conventionalcommits
+
+    - name: Run semantic-release
+      id: semantic-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npx semantic-release
+
+  deploy:
+    name: "Publish dev container features"
+    runs-on: ubuntu-latest
+    needs: semantic-release
+    if: needs.semantic-release.outputs.new-release-published == 'true'
+
+    permissions:
+      packages: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Publish"
+        uses: devcontainers/action@v1
+        with:
+          publish-features: "true"
+          base-path-to-features: "./devcontainer-feature"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

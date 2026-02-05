@@ -1,0 +1,97 @@
+{
+  "branches": [
+    "main",
+    {
+      "name": "dev",
+      "prerelease": "beta"
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            {
+              "type": "feat",
+              "section": "🚀 Features"
+            },
+            {
+              "type": "fix",
+              "section": "🐛 Bug Fixes"
+            },
+            {
+              "type": "perf",
+              "section": "⚡ Performance Improvements"
+            },
+            {
+              "type": "revert",
+              "section": "⏪ Reverts"
+            },
+            {
+              "type": "docs",
+              "section": "📚 Documentation",
+              "hidden": false
+            },
+            {
+              "type": "style",
+              "section": "💎 Styles",
+              "hidden": true
+            },
+            {
+              "type": "chore",
+              "section": "🔧 Miscellaneous Chores",
+              "hidden": true
+            },
+            {
+              "type": "refactor",
+              "section": "📦 Code Refactoring"
+            },
+            {
+              "type": "test",
+              "section": "🚨 Tests",
+              "hidden": true
+            },
+            {
+              "type": "build",
+              "section": "🛠 Build System",
+              "hidden": true
+            },
+            {
+              "type": "ci",
+              "section": "⚙️ Continuous Integration",
+              "hidden": true
+            }
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "scripts/version-shield-updater.sh ${nextRelease.version} && scripts/update-feature-version.sh ${nextRelease.version} && echo '${nextRelease.notes}' > notes.md",
+        "successCmd": "echo 'new-release-published=true' >> $GITHUB_OUTPUT && echo 'new-release-version=${nextRelease.version}' >> $GITHUB_OUTPUT",
+        "failCmd": "echo 'new-release-published=false' >> $GITHUB_OUTPUT"
+      }
+    ],
+    "@semantic-release/github",
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "README.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
