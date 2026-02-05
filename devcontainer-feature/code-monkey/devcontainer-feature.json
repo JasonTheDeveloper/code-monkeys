@@ -5,5 +5,5 @@
     "containerEnv": {
         "MY_FEATURE_PATH": "/usr/local/share/code-monkey"
     },
-    "postCreateCommand": "copy-file-to-workspace"
+    "entrypoint": "/usr/local/share/code-monkey/entrypoint.sh"
 }
