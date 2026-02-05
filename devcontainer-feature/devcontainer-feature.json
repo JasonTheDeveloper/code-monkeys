@@ -1,0 +1,9 @@
+{
+    "id": "code-monkey",
+    "version": "1.0.0",
+    "name": "Code Monkey",
+    "containerEnv": {
+        "MY_FEATURE_PATH": "/usr/local/share/code-monkey"
+    },
+    "postCreateCommand": "copy-file-to-workspace"
+}
