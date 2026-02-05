@@ -1,6 +1,6 @@
 {
     "id": "code-monkey",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "name": "Code Monkey",
     "entrypoint": "/usr/local/share/code-monkey/entrypoint.sh"
 }
