@@ -23,6 +23,8 @@ This repository contains the code-monkey agent configuration and devcontainer-fe
 
 ```json
 "features": {
-    "ghcr.io/jasonthedeveloper/code-monkeys/code-monkey:1": {}
+    "ghcr.io/jasonthedeveloper/code-monkeys/code-monkey:1": {
+        "replaceExisting": false
+    }
 }
 ```
