@@ -1,3 +1,15 @@
+## [1.3.0](https://github.com/JasonTheDeveloper/code-monkeys/compare/v1.2.0...v1.3.0) (2026-02-16)
+
+### 🚀 Features
+
+* **devcontainer-feature:** add option to toggle coping agent and skills ([55e658f](https://github.com/JasonTheDeveloper/code-monkeys/commit/55e658fec125f1c8c1467d1e5f15e267c9b3530a))
+
+### 📚 Documentation
+
+* **readme:** update description to mention skills ([65910c3](https://github.com/JasonTheDeveloper/code-monkeys/commit/65910c3294e5e7d2955f0cf4122c15a990d2dff8))
+* **readme:** update feature config to include `agent` and `skills` ([fbedaef](https://github.com/JasonTheDeveloper/code-monkeys/commit/fbedaef0dea735f8ed2afe6ea5c32872caa94e3e))
+* **readme:** update feature config to show `replaceExisting` option ([5528132](https://github.com/JasonTheDeveloper/code-monkeys/commit/552813273805719cc4b0b32f7e9eff416e3206c8))
+
 ## [1.2.0](https://github.com/JasonTheDeveloper/code-monkeys/compare/v1.1.0...v1.2.0) (2026-02-16)
 
 ### 🚀 Features
