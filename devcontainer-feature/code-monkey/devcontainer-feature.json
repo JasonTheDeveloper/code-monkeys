@@ -4,6 +4,16 @@
     "name": "Code Monkey",
     "entrypoint": "/usr/local/share/code-monkey/entrypoint.sh",
     "options": {
+        "agent": {
+            "type": "boolean",
+            "default": true,
+            "description": "Copy the Code Monkey agent file to .github/agents/ in the workspace."
+        },
+        "skills": {
+            "type": "boolean",
+            "default": true,
+            "description": "Copy skill files to .github/skills/ in the workspace."
+        },
         "replaceExisting": {
             "type": "boolean",
             "default": false,

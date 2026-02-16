@@ -35,11 +35,15 @@ else
 	echo "Copying Code Monkey files to $TARGET_DIR (skipping existing files)"
 fi
 
-mkdir -p "$TARGET_DIR/.github/agents/"
-cp $CP_FLAGS /usr/local/share/code-monkey/code-monkey.md "$TARGET_DIR/.github/agents/code-monkey.md"
+# Copy agent file if enabled
+if [ "$COPY_AGENT" = "true" ]; then
+	mkdir -p "$TARGET_DIR/.github/agents/"
+	cp $CP_FLAGS /usr/local/share/code-monkey/code-monkey.md "$TARGET_DIR/.github/agents/code-monkey.md"
+	echo "Copied agent file to $TARGET_DIR/.github/agents/"
+fi
 
-# Copy skills to .github/skills/
-if [ -d /usr/local/share/code-monkey/skills ]; then
+# Copy skills if enabled
+if [ "$COPY_SKILLS" = "true" ] && [ -d /usr/local/share/code-monkey/skills ]; then
 	mkdir -p "$TARGET_DIR/.github/skills/"
 	cp -r $CP_FLAGS /usr/local/share/code-monkey/skills/* "$TARGET_DIR/.github/skills/"
 	echo "Copied skills to $TARGET_DIR/.github/skills/"

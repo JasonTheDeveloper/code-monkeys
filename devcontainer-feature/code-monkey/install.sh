@@ -14,8 +14,10 @@ fi
 cp copy-file.sh /usr/local/bin/copy-file-to-workspace
 chmod +x /usr/local/bin/copy-file-to-workspace
 
-# Persist the replaceExisting option for use at container start
+# Persist options for use at container start
 echo "${REPLACEEXISTING:-false}" > /usr/local/share/code-monkey/replace-existing
+echo "${AGENT:-true}" > /usr/local/share/code-monkey/option-agent
+echo "${SKILLS:-true}" > /usr/local/share/code-monkey/option-skills
 
 # Copy the entrypoint script
 cp entrypoint.sh /usr/local/share/code-monkey/entrypoint.sh
