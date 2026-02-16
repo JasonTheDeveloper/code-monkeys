@@ -2,5 +2,12 @@
     "id": "code-monkey",
     "version": "1.1.0",
     "name": "Code Monkey",
-    "entrypoint": "/usr/local/share/code-monkey/entrypoint.sh"
+    "entrypoint": "/usr/local/share/code-monkey/entrypoint.sh",
+    "options": {
+        "replaceExisting": {
+            "type": "boolean",
+            "default": false,
+            "description": "Replace existing agent and skill files if they already exist in the workspace."
+        }
+    }
 }

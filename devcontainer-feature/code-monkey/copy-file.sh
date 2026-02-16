@@ -26,14 +26,21 @@ fi
 if [ -z "$TARGET_DIR" ] || [ ! -d "$TARGET_DIR" ]; then
 	TARGET_DIR="$(pwd)"
 fi
-echo "Copying Code Monkey agent file to $TARGET_DIR/.github/agents/"
+# Determine copy flags based on REPLACE_EXISTING
+if [ "$REPLACE_EXISTING" = "true" ]; then
+	CP_FLAGS=""
+	echo "Copying Code Monkey files to $TARGET_DIR (replacing existing files)"
+else
+	CP_FLAGS="-n"
+	echo "Copying Code Monkey files to $TARGET_DIR (skipping existing files)"
+fi
 
 mkdir -p "$TARGET_DIR/.github/agents/"
-cp -n /usr/local/share/code-monkey/code-monkey.md "$TARGET_DIR/.github/agents/code-monkey.md"
+cp $CP_FLAGS /usr/local/share/code-monkey/code-monkey.md "$TARGET_DIR/.github/agents/code-monkey.md"
 
 # Copy skills to .github/skills/
 if [ -d /usr/local/share/code-monkey/skills ]; then
 	mkdir -p "$TARGET_DIR/.github/skills/"
-	cp -rn /usr/local/share/code-monkey/skills/* "$TARGET_DIR/.github/skills/"
+	cp -r $CP_FLAGS /usr/local/share/code-monkey/skills/* "$TARGET_DIR/.github/skills/"
 	echo "Copied skills to $TARGET_DIR/.github/skills/"
 fi
