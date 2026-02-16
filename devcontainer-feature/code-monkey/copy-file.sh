@@ -30,3 +30,10 @@ echo "Copying Code Monkey agent file to $TARGET_DIR/.github/agents/"
 
 mkdir -p "$TARGET_DIR/.github/agents/"
 cp -n /usr/local/share/code-monkey/code-monkey.md "$TARGET_DIR/.github/agents/code-monkey.md"
+
+# Copy skills to .github/skills/
+if [ -d /usr/local/share/code-monkey/skills ]; then
+	mkdir -p "$TARGET_DIR/.github/skills/"
+	cp -rn /usr/local/share/code-monkey/skills/* "$TARGET_DIR/.github/skills/"
+	echo "Copied skills to $TARGET_DIR/.github/skills/"
+fi
