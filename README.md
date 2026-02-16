@@ -24,7 +24,9 @@ This repository contains the code-monkey agent configuration and devcontainer-fe
 ```json
 "features": {
     "ghcr.io/jasonthedeveloper/code-monkeys/code-monkey:1": {
-        "replaceExisting": false
+        "replaceExisting": false, //replace existing agent and skill files if they already exist in the workspace
+        "agent": true, //copy the Code Monkey agent file to .github/agents/ in the workspace
+        "skills": true //copy skill files to .github/skills/ in the workspace
     }
 }
 ```
