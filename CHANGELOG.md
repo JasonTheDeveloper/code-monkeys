@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/JasonTheDeveloper/code-monkeys/compare/v1.1.0...v1.2.0) (2026-02-16)
+
+### 🚀 Features
+
+* **devcontainer-feature:** add `replaceExisting` option ([7fdc0fe](https://github.com/JasonTheDeveloper/code-monkeys/commit/7fdc0fe09a5c27dd8f58456b6021abe0bfb7f159))
+
 ## [1.1.0](https://github.com/JasonTheDeveloper/code-monkeys/compare/v1.0.0...v1.1.0) (2026-02-16)
 
 ### 🚀 Features
