@@ -10,7 +10,7 @@ check "option-agent is true" bash -c '[ "$(cat /usr/local/share/code-monkey/opti
 check "option-skills is true" bash -c '[ "$(cat /usr/local/share/code-monkey/option-skills)" = "true" ]'
 
 # Simulate entrypoint: first copy with defaults, then modify, then copy again with replace
-WORKSPACE_DIR="$(mktemp -d)"
+export WORKSPACE_DIR="$(mktemp -d)"
 export COPY_AGENT="true"
 export COPY_SKILLS="true"
 export WORKING_DIR="$WORKSPACE_DIR"
