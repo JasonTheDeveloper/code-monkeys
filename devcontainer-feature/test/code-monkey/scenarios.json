@@ -1,10 +1,4 @@
 {
-    "defaults": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-        "features": {
-            "code-monkey": {}
-        }
-    },
     "agent_only": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
