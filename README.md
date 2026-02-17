@@ -17,7 +17,7 @@
 ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝   ╚═╝
 </pre>
 
-This repository contains the code-monkey agent configuration and devcontainer-feature installer. This feature will copy [code-monkey.agent.md](./devcontainer-feature/code-monkey/code-monkey.agent.md) to `.github/agents/` and OWSAP vulnerability [skills](./devcontainer-feature/code-monkey/skills/) to `.github/skills/` in the root of your project.
+This repository contains the code-monkey agent configuration and devcontainer-feature installer. This feature will copy [agent files](./devcontainer-feature/code-monkey/agents/) to `.github/agents/` and OWSAP vulnerability [skills](./devcontainer-feature/code-monkey/skills/) to `.github/skills/` in the root of your project.
 
 ## Example Usage
 
