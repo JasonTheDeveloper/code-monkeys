@@ -38,7 +38,7 @@ fi
 # Copy agent file if enabled
 if [ "$COPY_AGENT" = "true" ]; then
 	mkdir -p "$TARGET_DIR/.github/agents/"
-	cp $CP_FLAGS /usr/local/share/code-monkey/code-monkey.md "$TARGET_DIR/.github/agents/code-monkey.md"
+	cp $CP_FLAGS /usr/local/share/code-monkey/code-monkey.agent.md "$TARGET_DIR/.github/agents/code-monkey.agent.md"
 	echo "Copied agent file to $TARGET_DIR/.github/agents/"
 fi
 

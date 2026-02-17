@@ -3,7 +3,7 @@ set -e
 
 # Create a place to store the template
 mkdir -p /usr/local/share/code-monkey/
-cp code-monkey.md /usr/local/share/code-monkey/code-monkey.md
+cp code-monkey.agent.md /usr/local/share/code-monkey/code-monkey.agent.md
 
 # Copy skills directory
 if [ -d skills ]; then
