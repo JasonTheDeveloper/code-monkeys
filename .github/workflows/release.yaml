@@ -3,6 +3,21 @@ on:
   workflow_dispatch:
 
 jobs:
+  test:
+    name: "Test dev container features"
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: "Install latest devcontainer CLI"
+      run: npm install -g @devcontainers/cli
+
+    - name: "Test dev container features"
+      run: devcontainer features test -f code-monkey -p devcontainer-feature/
+
   semantic-release:
     name: Generate next release version
     runs-on: ubuntu-latest

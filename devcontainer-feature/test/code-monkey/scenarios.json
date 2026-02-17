@@ -1,0 +1,45 @@
+{
+    "defaults": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-monkey": {}
+        }
+    },
+    "agent_only": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-monkey": {
+                "agent": true,
+                "skills": false
+            }
+        }
+    },
+    "skills_only": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-monkey": {
+                "agent": false,
+                "skills": true
+            }
+        }
+    },
+    "no_copy": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-monkey": {
+                "agent": false,
+                "skills": false
+            }
+        }
+    },
+    "replace_existing": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-monkey": {
+                "agent": true,
+                "skills": true,
+                "replaceExisting": true
+            }
+        }
+    }
+}
