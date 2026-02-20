@@ -1,3 +1,18 @@
+## [1.3.1](https://github.com/JasonTheDeveloper/code-monkeys/compare/v1.3.0...v1.3.1) (2026-02-20)
+
+### 🐛 Bug Fixes
+
+* **agent:** rename code-monkey agent with `.agent.md` appended ([7cd8f38](https://github.com/JasonTheDeveloper/code-monkeys/commit/7cd8f38bacd9d3ba51667da66901eba92ec2297d))
+
+### 📚 Documentation
+
+* **readme:** add table highlighting feature options ([23cd71a](https://github.com/JasonTheDeveloper/code-monkeys/commit/23cd71ad2f6b023a1395e5d9c85fa887f2df9f60))
+
+### 📦 Code Refactoring
+
+* **devcontainer-feature:** move code-monkey agent to `agents/` ([1c4629d](https://github.com/JasonTheDeveloper/code-monkeys/commit/1c4629d4fc56c2e8fc3ccec2cf2201137d42021b))
+* **devcontainer-feature:** move feature to `src` to align with spec ([8eff45e](https://github.com/JasonTheDeveloper/code-monkeys/commit/8eff45ebeab0f3c2c00cb5a50be560bc8337f1d1))
+
 ## [1.3.0](https://github.com/JasonTheDeveloper/code-monkeys/compare/v1.2.0...v1.3.0) (2026-02-16)
 
 ### 🚀 Features
